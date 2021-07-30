@@ -96,6 +96,8 @@ $: sendButtonEnabled = (nameErrorMessage === "" && emailErrorMessage === "" && m
 
 <form name="contact" method="POST" data-netlify="true">
 
+  <input type="hidden" name="form-name" value="contact" />
+
   <label>
     <p>Name</p>
     <input
