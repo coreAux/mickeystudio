@@ -1,0 +1,24 @@
+{
+  "short_name": "Mickey",
+  "name": "Mickey",
+  "icons": [
+    {
+      "src": "/favicon192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0e232b",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "theme_color": "#85baa1",
+  "description": "This is a site about Mickey, lawyer and web developer!"
+}

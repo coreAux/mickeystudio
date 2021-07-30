@@ -1,0 +1,119 @@
+@font-face {
+	font-family: "Roboto";
+	font-weight: 300;
+	src: url("./fonts/Roboto-Light.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Roboto";
+	font-weight: 400;
+	src: url("./fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Roboto";
+	font-weight: 900;
+	src: url("./fonts/Roboto-Black.ttf") format("truetype");
+}
+
+:root {
+	--background-color: #f1f0f5;
+	--button-color: hotpink;
+	--input-background-color: #e1e0e5;
+	--switch-background-color: #e1e0e5;
+	--switch-button-color: #313035;
+	--text-color: #333;
+}
+
+html.darkmode {
+	--background-color: #010005;
+	--button-color: hotpink;
+	--input-background-color: #414045;
+	--switch-background-color: #919095;
+	--switch-button-color: #414045;
+	--text-color: #f1f0f5;
+}
+
+html, body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	padding: 1rem 5rem;
+	transition: all linear .1s;
+	background-color: var(--background-color);
+	color: var(--text-color);
+	margin: 0 0 5rem 0;
+	box-sizing: border-box;
+	font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-weight: 300;
+}
+
+body.modal-open {
+	overflow: hidden;
+}
+
+h1 {
+	font-weight: 900;
+	line-height: 1;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: rgb(0,100,200);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:visited {
+	color: rgb(0,80,160);
+}
+
+label {
+	display: block;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	-webkit-padding: 0.4em 0;
+	padding: 0.4em;
+	margin: 0 0 0.5em 0;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+input:disabled {
+	color: #ccc;
+}
+
+button {
+	color: #333;
+	background-color: #f4f4f4;
+	outline: none;
+}
+
+button:disabled {
+	color: #999;
+}
+
+button:not(:disabled):active {
+	background-color: #ddd;
+}
+
+button:focus {
+	border-color: #666;
+}
+
+@media (max-width: 700px) {
+	body {
+		padding: 1rem;
+	}
+}
