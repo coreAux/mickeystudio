@@ -85,7 +85,7 @@ $: if (windowInnerWidth < smallBreakPoint) {
 		class="card"
 		bind:this={card}
 	>
-		<img src="https://www.mikaelpetersen.se/static/b0c6b243b669729ed0acd9470c008e13/6d09e/profile-photo-bw.webp" alt="Mickey" class="front face" height="300" width="300" />
-		<img src="https://www.mikaelpetersen.se/static/c909efd23a09babd71b159279b387e79/6d09e/profile-photo.webp" alt="Mickey" class="back face" height="300" width="300" />
+		<img src="/images/profile-photo-bw.jpg" alt="Mickey" class="front face" height="300" width="300" />
+		<img src="/images/profile-photo.jpg" alt="Mickey" class="back face" height="300" width="300" />
 	</div>
 </div>
