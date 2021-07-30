@@ -116,7 +116,7 @@ function handleSubmit() {
 }
 </script>
 
-<form bind:this={contactForm} name="contact" data-netlify="true">
+<form bind:this={contactForm} name="contact" data-netlify=true>
 
   <input type="hidden" name="form-name" value="contact" />
 
