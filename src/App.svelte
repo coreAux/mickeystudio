@@ -156,7 +156,7 @@
 	bind:scrollY={scrollY}
 />
 
-
+{#if showModal}
 	<Modal toggleModal={toggleModal}>
 		<h2 slot="header">Contact me</h2>
 		<p slot="copy">Send me a message! 🥳</p>
@@ -167,7 +167,7 @@
 			bind:message={message}
 		/>
 	</Modal>
-
+{/if}
 
 <main>
 	<div class="title-wrapper">
