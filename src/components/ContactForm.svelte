@@ -92,9 +92,31 @@ let messageError = () => {
 }
 
 $: sendButtonEnabled = (nameErrorMessage === "" && emailErrorMessage === "" && messageErrorMessage === "" && !!name && !!email && !!message)
+
+let contactForm
+
+function handleSubmit() {
+  e.preventDefault()
+  let myForm = contactForm
+    console.log(myForm)
+  let formData = new FormData(myForm)
+    console.log(formData)
+
+  fetch('/', {
+    method: 'POST',
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString()
+  })
+  .then(() => {
+    console.log('Form successfully submitted')
+  })
+  .catch((error) => {
+    alert(error)
+  })
+}
 </script>
 
-<form name="contact" method="POST" data-netlify="true">
+<form bind:this={contactForm} name="contact" data-netlify="true">
 
   <input type="hidden" name="form-name" value="contact" />
 
@@ -137,6 +159,12 @@ $: sendButtonEnabled = (nameErrorMessage === "" && emailErrorMessage === "" && m
     <small class="errorMessage">{messageErrorMessage}</small>
   </label>
 
-  <button type="submit" disabled={!sendButtonEnabled}>Send</button>
+  <button
+    on:submit={handleSubmit}
+    type="submit"
+    disabled={!sendButtonEnabled}
+  >
+    Send
+  </button>
 
 </form>
