@@ -12,7 +12,7 @@
   }
 
   .modal-wrapper {
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     width: calc(420px + 50px + 50px);
@@ -31,7 +31,7 @@
     min-height: 75vh;
     border-radius: 3rem;
     z-index: 101;
-    padding: 1em;
+    padding: 1em 1em 2em;
     align-self: flex-start;
     box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, .2);
   }
@@ -62,7 +62,7 @@
     .modal {
       margin-top: 1em;
       min-height: 90vh;
-      height: 90vh;
+      /* height: 90vh; */
     }
 
     .close-button {

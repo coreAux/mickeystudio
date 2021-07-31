@@ -6,6 +6,13 @@
 		grid-template-rows: 10vh auto 10vh;
 	}
 
+	main.modal-open {
+		overflow: hidden;
+		position: fixed;
+		left: 0px;
+		padding: 1rem 2rem;
+	}
+
 	.title-wrapper {
 		/* border: 1px solid rgba(0, 0, 255, 1); */
 		grid-column-start: 1;
@@ -65,7 +72,7 @@
 		grid-row-end: span 3;
 	}
 
-/*	.stuffs {
+/*  .stuffs {
 		position: sticky;
 		width: 200px;
 		margin-left: auto;
@@ -77,7 +84,8 @@
 		border-radius: .4em;
 		font-size: 12px;
 		padding: .5em;
-	} */
+		z-index: 999;
+	}*/
 
 	p {
 		font-size: 24px;
@@ -88,6 +96,10 @@
 	}
 
 	@media (max-width: 700px) {
+		main.modal-open {
+			padding: 1rem;
+		}
+
 		.profile-photo-wrapper {
 			float: none;
 			margin: 2rem 0;
@@ -127,9 +139,21 @@
 		cursor.y = event.clientY
 	}
 
+	let top = 0
+
 	function toggleModal() {
 		showModal = !showModal
 		document.body.classList.toggle("modal-open")
+
+		if (showModal) {
+			top = scrollY
+		}
+	}
+
+	$: if (!showModal) {
+		setTimeout(() => {
+			window.scroll(0, top)
+		}, 100)
 	}
 
 	let isTouchDevice = (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0))
@@ -169,7 +193,10 @@
 	</Modal>
 {/if}
 
-<main>
+<main
+	class="{showModal ? "modal-open" : "modal-closed"}"
+	style="top: {showModal ? -top : scrollY}px;"
+>
 	<div class="title-wrapper">
 		<Title
 			cursor={cursor}
@@ -228,5 +255,6 @@
 	Window Inner Width: {windowInnerWidth}<br/>
 	Window Inner Height: {windowInnerHeight}<br/>
 	Scroll Y : {scrollY}
+	Top: {top}
 </div>
 -->

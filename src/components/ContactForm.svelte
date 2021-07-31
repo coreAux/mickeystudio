@@ -102,25 +102,25 @@ function encode(data) {
       .join("&")
 }
 
-function handleSubmit() {
-  e.preventDefault()
-  /* let myForm = contactForm
+function handleSubmit(e) {
+  /*e.preventDefault()
+   let myForm = contactForm
     console.log(myForm)
   let formData = new FormData(myForm)
     console.log(formData) */
 
-  fetch('/', {
-    method: 'POST',
+  fetch("/", {
+    method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: encode({
       "form-name": e.target.getAttribute("name"),
       ...name,
       ...email,
-      ...messsage
+      ...message
     })
   })
   .then(() => {
-    console.log('Form successfully submitted')
+    console.log("Form successfully submitted")
   })
   .catch((error) => {
     alert(error)
@@ -132,7 +132,7 @@ function handleSubmit() {
   bind:this={contactForm}
   name="contact"
   data-netlify="true"
-  on:submit={handleSubmit}
+  on:submit|preventDefault={(e) => handleSubmit(e)}
 >
 
   <input type="hidden" name="form-name" value="contact" />
