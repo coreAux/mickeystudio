@@ -93,9 +93,6 @@ let messageError = () => {
 
 $: sendButtonEnabled = (nameErrorMessage === "" && emailErrorMessage === "" && messageErrorMessage === "" && !!name && !!email && !!message)
 
-let contactForm
-$: console.log(contactForm)
-
 function encode(data) {
   return Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -109,14 +106,16 @@ function handleSubmit(e) {
   let formData = new FormData(myForm)
     console.log(formData) */
 
+  console.log(encode({name, email, message}));
+
   fetch("/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: encode({
       "form-name": e.target.getAttribute("name"),
-      ...name,
-      ...email,
-      ...message
+      name,
+      email,
+      message
     })
   })
   .then(() => {
@@ -129,7 +128,6 @@ function handleSubmit(e) {
 </script>
 
 <form
-  bind:this={contactForm}
   name="contact"
   data-netlify="true"
   on:submit|preventDefault={(e) => handleSubmit(e)}
