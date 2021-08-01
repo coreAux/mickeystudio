@@ -68,9 +68,15 @@
 </style>
 
 <script>
+import Loading from "./Loading.svelte"
+
 export let name
 export let email
 export let message
+
+let sending = false
+export let success
+export let failed
 
 let emailRegex = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
 
@@ -100,14 +106,8 @@ function encode(data) {
 }
 
 function handleSubmit(e) {
-  /*e.preventDefault()
-   let myForm = contactForm
-    console.log(myForm)
-  let formData = new FormData(myForm)
-    console.log(formData) */
-
-  console.log(encode({name, email, message}));
-
+  failed = false
+  sending = true
   fetch("/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -119,14 +119,22 @@ function handleSubmit(e) {
     })
   })
   .then(() => {
+    sending = false
+    success = true
+    name = ""
+    email = ""
+    message = ""
     console.log("Form successfully submitted")
   })
   .catch((error) => {
+    sending = false
+    failed = true
     alert(error)
   })
 }
 </script>
 
+{#if (!sending && !success)}
 <form
   name="contact"
   data-netlify="true"
@@ -135,9 +143,23 @@ function handleSubmit(e) {
 
   <input type="hidden" name="form-name" value="contact" />
 
+<!--
+<div on:click={() => (failed = !failed)} >
+  Failed: {failed}
+</div>
+<div on:click={() => (success = !success)} >
+  Success: {success}
+</div>
+<div on:click={() => {sending = !sending
+  setTimeout(() => {sending = !sending}, 10000)}} >
+  Sending: {sending}
+</div>
+-->
+
   <label>
     <p>Name</p>
     <input
+      disabled={sending}
       bind:value={name}
       on:blur={nameError}
       on:input={nameError}
@@ -151,6 +173,7 @@ function handleSubmit(e) {
   <label>
     <p>Email</p>
     <input
+      disabled={sending}
       bind:value={email}
       on:blur={emailError}
       on:input={emailError}
@@ -164,6 +187,7 @@ function handleSubmit(e) {
   <label>
     <p>Message</p>
     <textarea
+      disabled={sending}
       bind:value={message}
       on:blur={messageError}
       on:input={messageError}
@@ -176,9 +200,20 @@ function handleSubmit(e) {
 
   <button
     type="submit"
-    disabled={!sendButtonEnabled}
+    disabled={sending ? true : !sendButtonEnabled}
   >
-    Send
+      Send
   </button>
 
 </form>
+{/if}
+
+{#if sending}
+<div style="margin-top: 3em;">
+  <Loading
+    itemCount={15}
+    circleSize={100}
+    itemSize={25}
+  />
+</div>
+{/if}

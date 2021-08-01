@@ -16,6 +16,27 @@
 	src: url("./fonts/Roboto-Black.ttf") format("truetype");
 }
 
+@keyframes grow {
+	0%, 100% {
+		transform: scale(0);
+	}
+	50% {
+		transform: scale(1);
+	}
+}
+
+@keyframes failed {
+	0%, 100% {
+		transform: translateX(0);
+	}
+	20%, 50%, 80% {
+		transform: translateX(-10px);
+	}
+	40%, 60% {
+		transform: translateX(10px);
+	}
+}
+
 :root {
 	--background-color: #f1f0f5;
 	--button-color: hotpink;

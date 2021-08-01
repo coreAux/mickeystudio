@@ -134,6 +134,9 @@
 	let email = ""
 	let message = ""
 
+	let success = false
+	let failed = false
+
 	function handleMousemove(event) {
 		cursor.x = event.clientX
 		cursor.y = event.clientY
@@ -141,7 +144,13 @@
 
 	let top = 0
 
+	function resetMessage() {
+		success = false
+		failed = false
+	}
+
 	function toggleModal() {
+		resetMessage()
 		showModal = !showModal
 		document.body.classList.toggle("modal-open")
 
@@ -160,7 +169,6 @@
 	console.log('ontouchstart' in window)
 	console.log(navigator.maxTouchPoints > 0)
 	console.log(navigator.msMaxTouchPoints > 0)
-
 </script>
 
 <svelte:head>
@@ -181,11 +189,29 @@
 />
 
 {#if showModal}
-	<Modal toggleModal={toggleModal}>
+	<Modal
+		bind:success={success}
+		bind:failed={failed}
+		toggleModal={toggleModal}
+	>
 		<h2 slot="header">Contact me</h2>
-		<p slot="copy">Send me a message! 🥳</p>
+		<p slot="copy">
+
+			{#if !success && !failed}
+				Send me a message! <span class="emoji" role="img" aria-label="Closed Letterbox with Raised Flag" >📫</span>
+			{:else if !success && failed}
+				Something went wrong <span class="emoji" role="img" aria-label="Face with Raised Eyebrow" >🤨</span><br />
+				Please try again later.
+			{:else if success && !failed}
+				Thanks for your message! <span class="emoji" role="img" aria-label="Party Face" >🥳</span><br />
+				I'll get back to you as soon as possible.
+			{/if}
+
+		</p>
 		<ContactForm
 			slot="component"
+			bind:success={success}
+			bind:failed={failed}
 			bind:name={name}
 			bind:email={email}
 			bind:message={message}

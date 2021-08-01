@@ -83,6 +83,9 @@
   import CloseButton from "./svg/CloseButton.svelte"
   export let toggleModal
 
+  export let failed
+  export let success
+
   let counter = 0
   let hue = 0
   let timer = setInterval(() => {
@@ -109,7 +112,10 @@
 <div
   class="modal-wrapper"
 >
-  <div class="modal">
+  <div
+    class="modal"
+    style="{failed ? "animation: failed linear .5s forwards;" : ""}"
+  >
     <slot name="header">
       Modal
     </slot>
