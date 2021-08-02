@@ -11,7 +11,10 @@
   export let cursor
 </script>
 
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-labelledby="twitterTitle twitterDesc" role="img">
+  <title id="twitterTitle">Twitter Logo</title>
+  <desc id="twitterDesc">Twitter Logo in a circle</desc>
+  <defs>
   <defs>
     <linearGradient id="grad_twitter" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop

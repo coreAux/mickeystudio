@@ -11,7 +11,9 @@
   export let cursor
 </script>
 
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-labelledby="instagramTitle instagramDesc" role="img">
+  <title id="instagramTitle">Instagram Logo</title>
+  <desc id="instagramDesc">Instagram Logo in a circle</desc>
   <defs>
     <linearGradient id="grad_instagram" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop
