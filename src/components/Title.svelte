@@ -43,7 +43,7 @@
 	let mickey = ["M", "I", "C", "K", "E", "Y"]
 </script>
 
-{#if (windowInnerWidth > smallBreakPoint || !isTouchDevice)}
+{#if (windowInnerWidth > smallBreakPoint && !isTouchDevice)}
 	<h1>
 	{#each mickey as letter, i}
 		<span
