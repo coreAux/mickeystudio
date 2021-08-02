@@ -62,6 +62,7 @@
 <script>
 export let windowInnerWidth
 export let smallBreakPoint
+export let isTouchDevice
 export let scrollY
 
 let container
@@ -70,7 +71,7 @@ $: containerRect = container && container.getBoundingClientRect()
 $: console.log(container)
 $: console.log(containerRect)
 
-$: if (containerRect && windowInnerWidth < smallBreakPoint) {
+$: if (containerRect && (isTouchDevice || windowInnerWidth < smallBreakPoint)) {
 	if (scrollY > (containerRect.top / 2)) {
 		card.style = "transform: rotateY(180deg);"
 	} else {

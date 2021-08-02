@@ -1,5 +1,6 @@
 <style>
 	main {
+		overflow: auto;
 		margin: 0 auto;
 		display: grid;
 		grid-template-columns: 75vw auto;
@@ -96,6 +97,10 @@
 	}
 
 	@media (max-width: 700px) {
+		/*main {
+			padding-bottom: 100px;
+		}*/
+
 		main.modal-open {
 			padding: 1rem;
 		}
