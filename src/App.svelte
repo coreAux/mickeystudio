@@ -166,9 +166,9 @@
 	}
 
 	let isTouchDevice = (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0))
-	console.log('ontouchstart' in window)
+/*	console.log('ontouchstart' in window)
 	console.log(navigator.maxTouchPoints > 0)
-	console.log(navigator.msMaxTouchPoints > 0)
+	console.log(navigator.msMaxTouchPoints > 0)*/
 </script>
 
 <svelte:head>
