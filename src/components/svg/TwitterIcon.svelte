@@ -15,7 +15,6 @@
   <title id="twitterTitle">Twitter Logo</title>
   <desc id="twitterDesc">Twitter Logo in a circle</desc>
   <defs>
-  <defs>
     <linearGradient id="grad_twitter" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop
         offset="0%"

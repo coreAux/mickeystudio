@@ -15,7 +15,6 @@
   <title id="linkedinTitle">LinkedIn Logo</title>
   <desc id="linkedinDesc">LinkedIn Logo in a circle</desc>
   <defs>
-  <defs>
     <linearGradient id="grad_linkedin" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop
         offset="0%"
