@@ -97,9 +97,9 @@
 	}
 
 	@media (max-width: 700px) {
-		/*main {
-			padding-bottom: 100px;
-		}*/
+		main {
+			padding-bottom: 2em;
+		}
 
 		main.modal-open {
 			padding: 1rem;
@@ -132,7 +132,7 @@
 	let cursor = { x: 0, y: 0 }
 	let smallBreakPoint = 700
 
-	let showModal = false
+	let showModal = true
 
 	// ContactForm stuffs
 	let name = ""

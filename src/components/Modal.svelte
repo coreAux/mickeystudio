@@ -60,15 +60,16 @@
     }
 
     .modal {
-      margin-top: 1em;
-      min-height: 90vh;
+      width: 400px;
+      margin-top: 2em;
+      min-height: 50vh;
       /* height: 90vh; */
     }
 
     .close-button {
       position: absolute;
-      top: 2em;
-      right: calc((100vw - 420px) / 2);
+      top: 3em;
+      right: calc((100vw - 400px) / 2);
     }
   }
 
