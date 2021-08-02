@@ -4,7 +4,7 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: calc(100vh + 240px);
+    height: 100vh;
     background-color: rgba(0, 0, 0, .2);
     background: linear-gradient(90deg, rgba(255, 0, 0, .8), rgba(255, 0, 255, .8)), linear-gradient(180deg, rgba(0, 0, 0, .8), rgba(255, 255, 0, .8));
     background-blend-mode: exclusion;
@@ -16,7 +16,7 @@
     top: 50%;
     left: 50%;
     width: calc(420px + 50px + 50px);
-    /* height: 90vh; */
+    height: 90vh;
     background: transparent;
     display: flex;
     justify-content: center;
