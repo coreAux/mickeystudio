@@ -16,7 +16,7 @@
     top: 50%;
     left: 50%;
     width: calc(420px + 50px + 50px);
-    height: 90vh;
+    /* height: 90vh; */
     background: transparent;
     display: flex;
     justify-content: center;
