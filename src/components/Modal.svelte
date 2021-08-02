@@ -55,9 +55,8 @@
 
   @media (max-width: 700px) {
     .modal-wrapper {
-      overflow: auto;
       width: 100vw;
-      height: 100vh;
+      /* height: 100vh; */
     }
 
     .modal {
