@@ -114,7 +114,10 @@
 >
   <div
     class="modal"
-    style="{failed ? "animation: failed linear .5s forwards;" : ""}"
+    style="
+      {failed ? "animation: failed linear .5s forwards;" : ""}
+      {success ? "box-shadow: 0px 0px 10px 1px hotpink;" : ""}
+    "
   >
     <slot name="header">
       Modal

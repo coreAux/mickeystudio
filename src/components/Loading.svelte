@@ -3,7 +3,7 @@
     width: 100%;
   }
 
-  .loading-ul {
+  .loading-ul {
     margin: 0 auto;
     padding: 0;
     position: relative;
@@ -17,7 +17,7 @@
     left: 50%;
   }
 
-  .dot-container {
+  .dot-container {
      position: relative;
   }
 
