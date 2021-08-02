@@ -2,6 +2,7 @@
 	main {
 		overflow: auto;
 		margin: 0 auto;
+		padding: 1em 0;
 		display: grid;
 		grid-template-columns: 75vw auto;
 		grid-template-rows: 10vh auto 10vh;
@@ -132,7 +133,7 @@
 	let cursor = { x: 0, y: 0 }
 	let smallBreakPoint = 700
 
-	let showModal = true
+	let showModal = false
 
 	// ContactForm stuffs
 	let name = ""
