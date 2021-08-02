@@ -34,6 +34,8 @@
     padding: 1em 1em 2em;
     align-self: flex-start;
     box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, .2);
+
+    margin-top: 1em;
   }
 
   .close-button {
@@ -46,6 +48,7 @@
     position: relative;
     z-index: 101;
     cursor: pointer;
+    margin-top: 1em;
   }
 
   .close-button:focus {
