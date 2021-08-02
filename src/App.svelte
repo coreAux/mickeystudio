@@ -239,6 +239,7 @@
 			<ProfilePhoto
 				windowInnerWidth={windowInnerWidth}
 				smallBreakPoint={smallBreakPoint}
+				isTouchDevice={isTouchDevice}
 				scrollY={scrollY}
 			/>
 		</div>

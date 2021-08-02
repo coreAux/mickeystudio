@@ -57,18 +57,26 @@
 			transform: unset;
 		}
 	}
+
+	@media (hover: none) {
+		.hovercard:hover > div.card {
+			-webkit-transform: unset;
+			transform: unset;
+		}
+	}
 </style>
 
 <script>
 export let windowInnerWidth
 export let smallBreakPoint
+export let isTouchDevice
 export let scrollY
 
 let container
 let card
 $: containerRect = container && container.getBoundingClientRect()
 
-$: if (windowInnerWidth < smallBreakPoint) {
+$: if (windowInnerWidth < smallBreakPoint || isTouchDevice) {
 	if (scrollY > (containerRect.top / 2)) {
 		card.style = "transform: rotateY(180deg);"
 	} else {
