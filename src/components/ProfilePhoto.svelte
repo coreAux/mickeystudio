@@ -57,13 +57,6 @@
 			transform: unset;
 		}
 	}
-
-	@media (hover: none) {
-		.hovercard:hover > div.card {
-			-webkit-transform: unset;
-			transform: unset;
-		}
-	}
 </style>
 
 <script>
