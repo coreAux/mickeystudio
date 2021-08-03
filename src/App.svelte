@@ -257,6 +257,10 @@
 		<div
 			class="contact-button-wrapper"
 			on:click={toggleModal}
+			style="
+				border: 1px solid hsl({isTouchDevice ? scrollY : (cursor.x / 2)}, {isTouchDevice ? "250" : (cursor.y / 5)}%, 50%);
+				box-shadow: 0px 0px 10px 1px hsl({isTouchDevice ? scrollY : (cursor.x / 2)}, {isTouchDevice ? "250" : (cursor.y / 5)}%, 50%);
+			"
 		>
 			<div
 				style="display: flex; align-items: center; justify-content: center;"
