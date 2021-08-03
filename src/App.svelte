@@ -107,8 +107,13 @@
 		}
 
 		.profile-photo-wrapper {
-			float: none;
+			float: unset;
 			margin: 2rem 0;
+		}
+
+		.contact-button-wrapper {
+			float: unset;
+			margin: 2rem auto;
 		}
 
 		p {
@@ -252,7 +257,10 @@
 
 		<!-- <p>Hi, I'm Mickey! I'm a Digital Program Manager at one of Sweden's larger law firms. I have a law degree (LL.M.) from Stockholm University, I've done a few courses with <a href="https://www.superhi.com/?r=Micke" target="_blank" rel="noreferrer"><span class="uppercase clip-to-text">SuperHi</span></a> (check them out - they're great!) and is currently studying an online full stack JavaScript-course at the University of Helsinki.</p> -->
 
-		<p>Hi! My name is Mickey and I enjoy making interactive and colorful websites <span class="emoji" role="img" aria-label="Laptop">💻. In need of a custom made website? Send me a message <span class="emoji" role="img" aria-label="Envelope">✉️ and let's talk!</p>
+		<p>Hi! My name is Mickey and I enjoy making interactive and colorful websites <span class="emoji" role="img" aria-label="Laptop">💻.
+		</p>
+
+		<p>In need of a custom made website?</p>
 
 		<div
 			class="contact-button-wrapper"
