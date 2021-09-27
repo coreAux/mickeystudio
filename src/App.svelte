@@ -260,7 +260,7 @@
 		<p>Hi! My name is Mickey and I enjoy making interactive and colorful websites <span class="emoji" role="img" aria-label="Laptop">💻.
 		</p>
 
-		<p>In need of a custom made website?</p>
+		<!--p>In need of a custom made website?</p-->
 
 		<div
 			class="contact-button-wrapper"
