@@ -184,7 +184,7 @@
 
 <svelte:head>
 	<meta name="description" content="This is a site about Mickey, lawyer and web developer!" />
-  <meta name="theme-color" content="#85baa1" />
+	<meta name="theme-color" content="black" />
 	<link rel="manifest" href="manifest.json" />
   <link rel="apple-touch-icon" href="favicon192x192.png" />
 </svelte:head>
