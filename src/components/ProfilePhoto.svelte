@@ -68,8 +68,6 @@ export let scrollY
 let container
 let card
 $: containerRect = container && container.getBoundingClientRect()
-$: console.log(container)
-$: console.log(containerRect)
 
 $: if (containerRect && (isTouchDevice || windowInnerWidth < smallBreakPoint)) {
 	if (scrollY > (containerRect.top / 2)) {
